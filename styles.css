@@ -120,3 +120,8 @@ img { max-width: 100%; height: auto; }
   }
   .sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; }
 }
+
+@media (max-width: 991.98px) {
+  .sidebar { display: none !important; }
+  .content { padding: 16px 14px; } /* optional tighter padding on phones */
+}
