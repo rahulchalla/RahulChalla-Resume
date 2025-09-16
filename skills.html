@@ -9,6 +9,37 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- Mobile top bar (hidden on lg+) -->
+<div class="mobile-bar d-lg-none">
+  <div class="brand">Rahul Challa</div>
+  <button class="btn btn-sm btn-outline-light btn-toggle" type="button"
+          data-bs-toggle="offcanvas" data-bs-target="#navDrawer"
+          aria-controls="navDrawer" aria-label="Open menu">☰ Menu</button>
+</div>
+
+<!-- Offcanvas drawer (mobile navigation) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="navDrawer" aria-labelledby="navDrawerLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="navDrawerLabel">Navigation</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="nav flex-column">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="skills.html">Skills</a>
+      <a class="nav-link" href="experience.html">Professional & Internship Experience</a>
+      <a class="nav-link" href="education.html">Education</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+
+    <hr>
+    <a class="btn btn-primary w-100 mb-2"
+       href="RahulChalla-Resume.pdf"
+       target="_blank" rel="noopener">Open Resume (PDF)</a>
+  </div>
+</div>
+
 <div class="layout">
   <aside class="sidebar">
     <div class="profile d-flex align-items-center gap-3">

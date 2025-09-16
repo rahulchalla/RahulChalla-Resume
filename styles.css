@@ -57,3 +57,46 @@ body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sa
   #summary .summary-columns {
     columns: 2 28rem;           /* 2 columns, ~28rem min column width */
     column-gap: 2rem;
+
+/* --- Mobile fixes (xs–md) --- */
+@media (max-width: 991.98px) {
+  /* Hide the big sidebar; we’ll use an offcanvas menu instead */
+  .sidebar { display: none !important; }
+
+  /* Content padding a bit tighter on phones */
+  .content { padding: 16px 14px; }
+
+  /* Mobile top bar (we’ll add it in HTML below) */
+  .mobile-bar {
+    position: sticky; top: 0; z-index: 1030;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px;
+    background: linear-gradient(180deg, #0d6efd 0%, #5fa8ff 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+  }
+  .mobile-bar .brand { font-weight: 800; letter-spacing: .2px; }
+  .mobile-bar .btn-toggle {
+    border: 1px solid rgba(255,255,255,.45);
+    color: #fff;
+  }
+
+  /* Typography scales down a touch on small screens */
+  h1 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+  .lead { font-size: 1rem; }
+
+  /* Make long lines wrap nicely */
+  p, li { overflow-wrap: anywhere; word-break: break-word; }
+
+  /* Buttons wrap instead of overflowing */
+  .d-flex { flex-wrap: wrap; gap: 8px; }
+}
+
+/* Keep the two-column summary only on large screens */
+@media (min-width: 992px) {
+  #summary .summary-columns { columns: 2 28rem; column-gap: 2rem; }
+}
+
+/* Images default to fluid on all screens (just in case) */
+img { max-width: 100%; height: auto; }
+
