@@ -100,26 +100,6 @@ body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sa
 /* Images default to fluid on all screens (just in case) */
 img { max-width: 100%; height: auto; }
 
-/* Name the grid areas */
-.sidebar { grid-area: sidebar; }
-.content { grid-area: content; }
-
-/* Mobile default: content first, then sidebar */
-.layout {
-  display: grid;
-  grid-template-areas:
-    "content"
-    "sidebar";
-}
-
-/* Desktop: sidebar left, content right */
-@media (min-width: 992px) {
-  .layout {
-    grid-template-columns: var(--sidebar-width, 300px) 1fr;
-    grid-template-areas: "sidebar content";
-  }
-  .sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; }
-}
 
 @media (max-width: 991.98px) {
   .sidebar { display: none !important; }
