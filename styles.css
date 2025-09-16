@@ -101,7 +101,8 @@ body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sa
 img { max-width: 100%; height: auto; }
 
 
-@media (max-width: 991.98px) {
-  .sidebar { display: none !important; }
-  .content { padding: 16px 14px; } /* optional tighter padding on phones */
-}
+<!-- Sidebar: show second on mobile, first on lg+ -->
+<aside class="col-12 col-lg-3 order-2 order-lg-1 sidebar"> ... </aside>
+
+<!-- Main: show first on mobile, second on lg+ -->
+<main class="col-12 col-lg-9 order-1 order-lg-2 content"> ... </main>
