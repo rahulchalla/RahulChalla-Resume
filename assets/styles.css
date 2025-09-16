@@ -1,0 +1,77 @@
+
+:root{
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --border: rgba(0,0,0,.08);
+  --brand: #0d6efd;
+  --brand-2: #5fa8ff;
+  --ink: #0b1324;
+  --muted: #6c757d;
+  --radius: 16px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);}
+
+/* Brand gradient bar */
+.bg-gradient-primary{
+  background: linear-gradient(180deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+.avatar-circle{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.2);color:#fff;font-weight:800;}
+
+/* Sections */
+.section{padding: clamp(40px, 6vw, 72px) 0;}
+.section-hero{padding: clamp(56px, 8vw, 96px) 0; background: radial-gradient(1200px 400px at 10% -10%, rgba(13,110,253,.15), rgba(0,0,0,0));}
+.hero-card{
+  max-width: 1000px; margin: 0 auto; background:var(--card); border:1px solid var(--border);
+  border-radius: var(--radius); padding: clamp(18px, 3vw, 28px); box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+.display-title{font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight:800; letter-spacing:.15px;}
+.lead{font-size: clamp(1rem, 1.6vw, 1.125rem); color:var(--muted)}
+
+.section-title{font-weight:800; text-transform:uppercase; font-size: .95rem; letter-spacing:.28px; color:var(--muted); margin-bottom: 14px;}
+.prose{font-size:1rem;line-height:1.65}
+.prose p{text-align:justify;text-justify:inter-word;text-align-last:left;hyphens:auto;margin:0 0 .8rem 0}
+.two-col-lg{column-gap:2rem}
+@media(min-width:992px){ .two-col-lg{columns: 2 26rem;} }
+
+/* Chips */
+.chip-grid{display:flex;flex-wrap:wrap;gap:10px;max-width:1100px}
+.chip-grid span{display:inline-block;padding:.5rem .75rem;border-radius:999px;background:#e9f2ff;border:1px solid #d7e7ff;color:#0d6efd;font-weight:600; font-size:.9rem}
+
+/* Timeline */
+.timeline{position:relative;max-width:1100px}
+.titem{display:grid;grid-template-columns:14px 1fr;gap:12px;margin-bottom:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px}
+.tdot{width:10px;height:10px;background:var(--brand);border-radius:50%;margin-top:8px}
+.tline{font-weight:600;margin-bottom:6px}
+.tcontent ul{margin:0 0 0 1rem;padding-left:.6rem}
+.tcontent li{margin:6px 0}
+
+/* Education list */
+.edu-list li{margin:6px 0}
+
+/* Footer */
+.footer{background:#fff;border-top:1px solid var(--border)}
+
+/* Buttons contrast */
+.btn-primary{--bs-btn-bg:var(--brand);--bs-btn-border-color:var(--brand)}
+.btn-outline-primary{--bs-btn-color:var(--brand);--bs-btn-border-color:var(--brand)}
+
+/* Better wrapping on tiny screens */
+@media (max-width: 575.98px){
+  p, li { overflow-wrap:anywhere; word-break:break-word; }
+}
+
+/* Print-friendly resume */
+@media print {
+  header, .btn, .navbar, .footer, .chip-grid span { display:none !important; }
+  .section, .section-hero { padding: 0 !important; }
+  body { background: #fff; }
+  .hero-card, .titem { border: none; box-shadow: none; padding: 0; }
+  .section-title { color: #000; }
+} 
+
+
+
+
